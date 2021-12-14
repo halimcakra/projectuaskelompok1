@@ -1,0 +1,835 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Moulpali&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+
+/* SIDE BAR */
+
+ .sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #1B1E2A;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+
+.sidebar.open{
+  width: 250px;;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #FCF4F4;
+  font-family: 'Moulpali', sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  opacity: 0;
+  letter-spacing: 2px;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #FCF4F4;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #FCF4F4;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FCF4F4;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #31333E;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar .bx-search{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  background: #31333E;
+  color: #FCF4F4;
+}
+.sidebar.open .bx-search:hover{
+  background: #31333E;
+  color: #FCF4F4;
+}
+.sidebar .bx-search:hover{
+  background: #FCF4F4;
+  color: #31333E;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #1B1E2A;
+}
+.sidebar li a:hover{
+  background: #FCF4F4;
+  width: 100%;
+}
+.sidebar li a .links_name{
+  color: #FCF4F4;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #1B1E2A;
+}
+
+
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.sidebar li.profile{
+  position: fixed;
+  height: 60px;
+  width: 78px;
+  left: 0;
+  bottom: -8px;
+  padding: 10px 14px;
+  background: #31333E;
+  transition: all 0.5s ease;
+  overflow: hidden;
+
+}
+.sidebar.open li.profile{
+  width: 200px;
+  border-radius: 15px;
+  margin: 20px;
+}
+.sidebar li .profile-details{
+  display: flex;
+  align-items: center;
+  margin: 8px;
+}
+
+.sidebar li.profile .name{
+  font-size: 15px;
+  font-weight: 400;
+  color: #FCF4F4;
+}
+.sidebar .profile #log_out{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: #31333E;
+  width: 100%;
+  height: 60px;
+  cursor: pointer;
+  line-height: 60px;
+  border-radius: 0px;
+  transition: all 0.5s ease;
+}
+.sidebar.open .profile #log_out{
+  width: 50px;
+  background: none;
+}
+
+
+
+
+/* HOME SECTION */
+
+
+
+.home-section{
+  position: relative;
+  background: #f2e4e4;
+  min-height: 96vh;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+.sidebar.open ~ .home-section{
+  left: 250px;
+  width: calc(100% - 250px);
+}
+.home-section .text,
+.home-section .content .content_ds{
+  background: #fff;
+  border-radius: 10px;
+  height: 40px;
+  margin-top: 13px;
+  width: calc(100% - 270px);
+}
+
+.home-section .text p{
+  padding: 0 20px;
+  font-size: 25px;
+  font-weight: 500;
+
+}
+.home-section nav{
+  height: 60px;
+  padding: 0 20px;
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.home-section .navbar .notif{
+  margin-left: -20px;
+}
+.home-section .navbar .pesan{
+  margin-left: 5px;
+}
+.home-section .navbar{
+  display: flex;
+  background: #fff;
+  margin-top: 13px;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 250px;
+  border-radius: 10px;
+}
+.home-section .navbar .icon_wrap{
+  cursor: pointer;
+    font-size: 18px;
+}
+.home-section .navbar .notif,
+.home-section .navbar .pesan,
+.home-section .navbar .akun_profil{
+  margin-right:20px;
+  position: relative;
+}
+.notification_dd,
+.profile_dd{
+  position: absolute;
+  top: 38px;
+  right: 0;
+  background: #fff;
+  width: 350px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.125);
+  display: none;
+}
+.notification_dd:before,
+.profile_dd:before{
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 0;
+  border: 13px solid;
+  border-color: transparent transparent #fff transparent;
+
+}
+
+.notification_dd li {
+    border-bottom: 1px solid #f1f2f4;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+.notification_dd li .notify_icon{
+  display: flex;
+}
+.notification_dd li .notify_data{
+  margin: 0 20px;
+  width: 185px;
+}
+.notification_dd li .notify_data .title{
+  color: #1B1E2A;
+  font-weight: 600;
+  font-size: 13px;
+}
+.notification_dd li .notify_data .sub_title{
+  color: #31333E;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 5px;
+}
+.notification_dd li .notify_status p{
+  font-size: 12px;
+}
+.notification_dd li.Succes .notify_status p{
+   color: #31333E;
+}
+.notification_dd li.Failed .notify_status p{
+  color: #a41515;
+}
+.akun_profil .icon_wrap,
+.akun_profil .navbar{
+  display: flex;
+  margin-right: -52px;
+  align-items: center;
+}
+.akun_profil .name{
+  display: inline-block;
+  margin: 0 12px;
+  font-size: 16px;
+}
+.navbar .icon_wrap:hover,
+.navbar .akun_profil.active .icon_wrap,
+.navbar .notif.active .icon_wrap,
+.navbar .pesan.active .icon_wrap{
+  color: #3b80f9;
+}
+.akun_profil .icon_wrap img{
+  height: 20px;
+  width: 20px;
+}
+ .akun_profil .profile_dd{
+  width: 175px;
+}
+ .akun_profil .profile_dd:before{
+  right: 0;
+}
+
+ .akun_profil.profile_dd ul li {
+    border-bottom: 1px solid #f1f2f4
+    cursor:pointer;
+}
+
+.akun_profil .profile_dd ul li  a{
+    display: block;
+    padding: 10px 25px;
+    position: relative;
+    color: #1B1E2A;
+    cursor: pointer;
+}
+
+.akun_profil .profile_dd ul li  a .picon{
+  display: inline-block;
+  width: 30px;
+  font-size: 18px;
+}
+
+.akun_profil .profile_dd ul li  a:hover{
+  color: #3b80f9;
+  background: #f0f5ff;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.akun_profil .profile_dd .profile_ul{
+  font-size: 14px;
+}
+
+.akun_profil .profile_dd ul li.profile_li a:hover {
+    background: transparent;
+    cursor: default;
+    color: #7f8db0;
+
+}
+.akun_profil.active .profile_dd,
+.notif.active .notification_dd,
+.pesan.active .notification_dd{
+  display: block;
+  z-index: 3;
+}
+
+
+/* CONTENT */
+
+
+
+.home-section .content{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.home-section .content .content_ds {
+  height: 75vh;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  margin-top: 40px;
+}
+.home-section .content .content_ds img{
+  width: calc(100% - 10px);
+  height: 75vh;
+  opacity: 0.97;
+  border-radius: 20px;
+
+}
+.home-section .content .content_ds .background_img  .cloud{
+  position: absolute;
+  border-radius: 1000px;
+  left: 0;
+  background: #f2e4e4;
+  top: 25%;
+  left: 7%;
+}
+.home-section .content .content_ds .background_img .awan {
+  position: absolute;
+  border-radius: 1000px;
+  left:0;
+  background:#1B1E2A;
+  opacity: 0.95;
+  top: 43%;
+  left:8%;
+}
+.home-section .content .content_ds .background_img .awan_two {
+  position: absolute;
+  border-radius: 1000px;
+  left:0;
+  background:#c8361c;
+  opacity: 0.95;
+  top: 43%;
+  left:26%;
+}
+.home-section .content .content_ds .background_img  .cloud::before{
+  content: "";
+  position: absolute;
+  top: -30%;
+  width: 50%;
+  height: 50%;
+  background: #f2e4e4;
+  border-radius: 50%;
+  left: 20%;
+}
+.home-section .content .content_ds .background_img  .cloud::after{
+  content: "";
+  position: absolute;
+  top: -38%;
+  width: 30%;
+  height: 80%;
+  background: #f2e4e4;
+  border-radius: 50%;
+  right:10%;
+}
+.home-section .content .content_ds .background_img  .cloud .cloud_one{
+  width: 360px;
+  height: 90px;
+}
+.home-section .content .content_ds .background_img  .cloud .cloud_one p{
+  padding: 6px 10px;
+  font-size: 18px;
+  margin-left: 30px;
+
+}
+
+.home-section .content .content_ds .background_img  .awan .cloud_two{
+  width: 200px;
+  height: 30px;
+  text-align: center;
+  margin-top: 5px;
+}
+.home-section .content .content_ds .background_img  .awan .cloud_two a{
+  font-size: 15px;
+  color: #fff;
+  font-weight: 500;
+}
+.home-section .content .content_ds .background_img  .awan .cloud_two a:hover,
+.home-section .content .content_ds .background_img  .awan_two .cloud_three a:hover{
+  color: #f2e4e4;
+}
+
+.home-section .content .content_ds .background_img  .awan_two .cloud_three{
+  width: 120px;
+  height: 30px;
+  text-align: center;
+  margin-top: 5px;
+}
+.home-section .content .content_ds .background_img  .awan_two .cloud_three a{
+  font-size: 15px;
+  color: #fff;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+/* KALENDER */
+
+
+
+.home-section .content .tgl_kalender{
+  margin-top: 33px;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 250px;
+  border-radius: 10px;
+}
+.home-section .content .content_ds .title_content,
+.home-section .content .content_kalender .kalender_content{
+  font-size: 18px;
+  font-weight: 500;
+
+}
+.home-section .content .tgl_kalender .datetime,
+.home-section .content .tgl_kalender .content_kalender{
+  width: 250px;
+  background: #fff;
+  margin: 10px 0;
+}
+.home-section .content .tgl_kalender .content_kalender{
+  min-height: max-content;
+}
+
+.home-section .content .tgl_kalender .datetime{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  border-radius: 15px;
+}
+.home-section .content .tgl_kalender .datetime .date{
+  font-size: 12px;;
+  letter-spacing: 1px;
+}
+.home-section .content .tgl_kalender .datetime .time{
+  font-size: 20px;
+
+}
+/* Kalender */
+.dark .home-section .content .tgl_kalender .content_kalender .calendar{
+  background: #000;
+  color: #fff;
+}
+.dark .content_kalender .calendar .calendar-body .calendar_days{
+  color: #fff;
+
+}
+.home-section .content .tgl_kalender .content_kalender{
+  display: grid;
+  place-items:center;
+  border-radius: 10px;
+  font-size: 12px;
+
+}
+.home-section .content .tgl_kalender .content_kalender .calendar{
+  height: max-content;
+  width: max-content;
+  position: relative;
+  overflow: hidden;
+}
+.calendar-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+.calendar-body {
+    padding: 10px;
+}
+.calendar-body .calendar-week-day{
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  font-weight: 500;
+}
+.calendar-week-day div{
+  display: grid;
+  place-items:center;
+  color: f2e4e4;
+  opacity: 0.5;
+  height: 30px;
+}
+.calendar-days{
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  font-weight: 500;
+}
+
+.calendar-days div{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  place-items:center;
+  color: #000;
+  opacity: 0.8;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+}
+.month-picker{
+  padding: 20px 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.month-picker:hover{
+  opacity: 0.7;
+}
+.year-picker{
+  display: flex;
+  align-items: center;
+}
+.year-change{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: grid;
+  place-items:center;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.year-change:hover{
+  opacity: 0.7;
+}
+.calendar-footer{
+  padding: 10px;
+}
+.calendar-days div span{
+  position: absolute;
+}
+.calendar-days div:hover span{
+  transition: width 0.2s ease-in-out,height 0.2s ease-in-out;
+
+}
+.content_kalender .calendar{
+  box-shadow: shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.calendar-days div span:nth-child(1),
+.calendar-days div span:nth-child(3){
+  width: 2px;
+  height: 0;
+  background-color: #c3c2c8;
+}
+.calendar-days div:hover span:nth-child(1),
+.calendar-days div:hover span:nth-child(3){
+  height: 100%;
+}
+
+.calendar-days div span:nth-child(1){
+  bottom: 0;
+  left: 0;
+}
+.calendar-days div span:nth-child(3){
+  top: 0;
+  right: 0;
+}
+.calendar-days div span:nth-child(2),
+.calendar-days div span:nth-child(4){
+  width: 0;
+  height: 2px;
+  background-color: #c3c2c8;
+}
+.calendar-days div:hover span:nth-child(2),
+.calendar-days div:hover span:nth-child(4){
+  width: 100%;
+
+}
+.calendar-days div span:nth-child(2){
+  top: 0;
+  left: 0;
+}
+
+.calendar-days div span:nth-child(4){
+  bottom: 0;
+  right: : 0;
+}
+
+.calendar-days div:hover span:nth-child(2){
+  transition-delay: 0.2s;
+}
+.calendar-days div:hover span:nth-child(3){
+  transition-delay: 0.4s;
+}
+.calendar-days div:hover span:nth-child(4){
+  transition-delay: 0.6s;
+}
+.month-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color:#fff;
+    padding: 20px;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    display: grid;
+    transform: scale(1.5);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.month-list.show {
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: visible;
+    transition: all 0.2s ease-in-out;
+}
+
+.month-list > div {
+    display: grid;
+    place-items: center;
+}
+.calendar-days div.curr-date,
+.calendar-days div.curr-date:hover {
+    background-color: blue;
+    color: #fff;
+    border-radius: 50%;
+}
+.month-list > div > div {
+    width: 100%;
+    padding: 3px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--color-txt);
+}
+
+.month-list > div > div:hover {
+    background-color: var(--color-hover);
+}
+
+
+/* LOKASI DAN NO HP */
+
+
+.tgl_kalender .lokasi{
+  margin: 10px;
+}
+.tgl_kalender .lokasi i{
+    font-size: 18px;
+
+}
+.tgl_kalender .lokasi span{
+    font-size: 13px;
+    margin-left: 5px;
+}
+.tgl_kalender .lokasi i,
+.tgl_kalender .lokasi span{
+  color: 1B1E2A;
+  opacity: 0.8;
+}
+
+
+
+
+
+/* COPYRIGHT */
+
+
+
+.copyright {
+  background-color: #fff;
+  display: flex;
+  padding: 10px;
+  align-items: center;
+}
+.copyright .wrapper{
+  font-size: 12px;
+  position: fixed;
+  margin-left: 90px;
+
+
+}
+
+
+
+
+/* RESPONSIVE */
+
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}

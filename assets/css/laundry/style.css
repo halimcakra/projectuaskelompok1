@@ -1,0 +1,102 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body { 
+    background-color: whitesmoke;
+}
+.wrapper {
+    width: 1300px;
+    margin: auto;
+    position: relative;
+}
+h1 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 35px;
+    color: rgb(248, 246, 246);
+    font-family: 'Segoe UI';
+}
+header a h1 {
+    float:left;
+    color:blue;
+    margin-bottom:15px;
+}
+header a h3{
+    padding: 5px 15px;
+    background-color: rgb(73, 31, 189);
+    border-radius: 20px;
+    float:right;
+    text-align: center;
+    margin-top: 27px;
+    font-size: 15px;
+    color: whitesmoke;
+    font-family: 'Segoe UI';
+}
+span {
+    color:blue;
+}
+.main ul {
+    background-color: rgb(42, 69, 189);
+    border-radius: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+.main ul li{
+    font-size: 24px;
+    font-family: 'arial';
+    display: inline-block;
+    margin: 20px 80px;
+    
+}
+.main ul li a {
+    text-decoration: none;
+    color:rgb(245, 244, 244);
+    border-radius: 5px;
+    transition: 0.6s;
+    padding: 4px 5px;
+    
+}
+hr{
+    margin:25px;
+}
+h3{
+    margin-left:10px;
+}
+.kotak1 table{
+    width:100%;
+    border:2px solid black;
+    margin-top:35px;
+    background-color:rgb(62, 62, 190);
+    padding:10px 10px;
+}
+.kotak1 tr{
+    text-align: center;
+}
+.tambah span{
+    text-align: center;
+    background-color: rgba(56, 56, 221, 0.397);
+    padding:10px;
+    border-radius: 20px;
+    font-size:20px;
+    color: whitesmoke;
+    text-decoration: none;
+}
+th{
+    color:white;
+}
+td {
+    color:whitesmoke;
+}
+a {
+    color:white;
+    text-decoration: none;
+}
+.tambah a{
+    text-decoration: none;
+    color:black;
+    text-align: center;
+}
